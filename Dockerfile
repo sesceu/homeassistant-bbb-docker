@@ -3,7 +3,7 @@ MAINTAINER Sebastian Schneider <mail@sesc.eu>
 
 RUN [ "cross-build-start" ]
 
-VOLUME /config
+VOLUME /data
 
 # Install yaml from apt, to also install the cpp lib.
 RUN apt-get update && apt-get install -y \
@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # Install home assistant
+RUN pip3 install netdisco
 RUN pip3 install homeassistant
 
 WORKDIR /data
@@ -22,6 +23,6 @@ CMD ["hass", "--open-ui", "--config", "/data/.homeassistant"]
 
 RUN [ "cross-build-end" ]
 
-EXPOSE 80
+EXPOSE 8123
 
 

@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # Install home assistant
-RUN pip3 install netdisco
 RUN pip3 install homeassistant
 
 WORKDIR /data

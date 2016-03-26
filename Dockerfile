@@ -20,9 +20,9 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # Install home assistant
-#RUN pip3 install netdisco==0.5.5
-RUN pip3 install python-mpd2==0.5.4
-RUN pip3 install python-nmap==0.4.3
+RUN pip3 install netdisco
+RUN pip3 install python-mpd2
+RUN pip3 install python-nmap
 RUN pip3 install fritzconnection
 RUN pip3 install homeassistant
 

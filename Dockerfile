@@ -29,12 +29,9 @@ RUN pip3 install python-nmap
 RUN pip3 install fritzconnection
 RUN pip3 install homeassistant
 
-RUN find /usr/local/lib/
 ADD bbb.patch /usr/local/lib/python3.4/dist-packages/
 WORKDIR /usr/local/lib/python3.4/dist-packages/
 RUN patch -N -p1 < bbb.patch
-RUN find /usr/local/lib/ -iname "*rpi*"
-RUN find /usr/local/lib/ -iname "*bbb*"
 
 WORKDIR /data
 
